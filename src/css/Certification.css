@@ -69,6 +69,7 @@
   word-break: break-word;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   /* fixed 2-line height reserved so shorter titles still push
@@ -140,6 +141,7 @@
   .cert-card h3 {
     font-size: 1.05rem;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
   }
 
   .issuer {
