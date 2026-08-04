@@ -1,0 +1,127 @@
+.projects-section {
+  background-color: white;
+  color: black;
+  width: 100%;
+  min-height: 100dvh;
+  padding: 6rem 2rem 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Headline and label */
+.projects-content,
+.projects-grid {
+  width: min(100%, 1320px);
+}
+
+.projects-content {
+  margin: 0;
+}
+
+.projects-label {
+  text-transform: uppercase;
+  margin: 0 0 1rem;
+  color: rgb(55, 50, 50);
+  letter-spacing: 2px;
+}
+
+.projects-headline {
+  font-size: 55px;
+  margin: 0;
+}
+
+/* See all button */
+.see-all-link {
+  display: inline-flex;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  gap: 4px;
+  margin-top: 2rem;
+  font-weight: 450;
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.see-all-link:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* Projects Cards */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem;
+  margin: 1.5rem 0 0;
+  min-width: 0;
+}
+
+.project-card {
+  aspect-ratio: 3 / 4.2;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1.2rem;
+  justify-content: flex-start;
+}
+
+/* Card Thumbnail */
+.project-img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  display: block;
+}
+
+/* Card Headline */
+.project-title {
+  font-weight: 600;
+  font-size: 20px;
+  margin: 1rem 1rem 0.5rem;
+  min-height: 50px;
+}
+
+/* Card Text Content */
+.project-description {
+  font-size: 14px;
+  margin: 0 1rem 0.8rem;
+  line-height: 1.5;
+  flex: 0 0 auto;
+  min-height: 70px;
+}
+
+/* Project Tag Styles*/
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0 1rem 0.8rem;
+}
+
+.project-tags span {
+  border: 1px solid black;
+  padding: 4px 9px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* View My Project Link */
+.project-link {
+  font-size: 13px;
+  font-weight: 450;
+  color: black;
+  margin: 0 1rem;
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+.project-link:hover .arrow {
+  transform: translateX(5px);
+}

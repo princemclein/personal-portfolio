@@ -1,0 +1,161 @@
+.certification-section {
+  width: 100%;
+  min-height: 100dvh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 0;
+}
+
+.certification-container {
+  width: min(1400px, 90%);
+  margin: 0 auto;
+}
+.certification-header {
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.certification-label {
+  letter-spacing: 0.35em;
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.certification-headline {
+  font-size: 50px;
+  line-height: 1;
+  margin: 0;
+  font-weight: 700;
+}
+
+.certification-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.certification-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  width: 100%;
+  align-items: stretch;
+  transition:
+    transform 0.24s ease,
+    opacity 0.24s ease;
+}
+
+.certification-grid.is-animating {
+  transform: translateX(4px);
+  opacity: 0.95;
+}
+
+.slider-btn {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #000;
+  background-color: transparent;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.18s ease,
+    box-shadow 0.2s ease;
+}
+
+.slider-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.04);
+}
+
+.slider-btn:hover,
+.slider-btn:focus-visible {
+  background-color: #000;
+  color: #fff;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.cert-card {
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+  max-height: 380px;
+  box-sizing: border-box;
+  padding: 2rem;
+  border-radius: 0;
+}
+
+.cert-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0.6rem 0;
+}
+
+.issuer {
+  color: #666;
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+}
+
+.date {
+  margin: 0 0 1.5rem 0;
+  color: #222;
+}
+
+.cert-link {
+  margin-top: auto;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.cert-link .arrow {
+  transition: transform 0.2s ease;
+}
+
+.cert-link:hover .arrow {
+  transform: translateX(5px);
+}
+
+@media (max-width: 900px) {
+  .certification-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certification-slider {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .certification-section {
+    padding: 4rem 0;
+  }
+
+  .certification-headline {
+    font-size: 2.2rem;
+  }
+
+  .cert-card {
+    padding: 1.3rem;
+  }
+}

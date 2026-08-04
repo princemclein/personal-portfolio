@@ -1,0 +1,128 @@
+.all-experience-page {
+  min-height: 100vh;
+  background-color: white;
+  color: black;
+  padding: 4rem 2rem 6rem;
+}
+
+.all-experience-hero {
+  max-width: 1120px;
+  margin: 0 auto 3rem;
+}
+
+.back-home-link {
+  display: inline-flex;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  gap: 0.35rem;
+}
+
+.back-home-link:hover .arrow,
+.back-home-link:hover span {
+  transform: translateX(-4px);
+}
+
+.all-experience-label {
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.82rem;
+  color: #4d4d4d;
+}
+
+.all-experience-title {
+  margin: 0 0 1rem;
+  font-size: clamp(2.3rem, 5vw, 3.4rem);
+  line-height: 1.05;
+}
+
+.all-experience-intro {
+  max-width: 700px;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #222222;
+}
+
+.all-experience-list {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.all-experience-card {
+  border: 1px solid black;
+  background-color: white;
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.all-experience-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.all-experience-period {
+  margin: 0;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #4d4d4d;
+}
+
+.all-experience-role {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.all-experience-org {
+  margin: 0;
+  font-weight: 600;
+}
+
+.all-experience-description {
+  margin: 0;
+  line-height: 1.7;
+  color: #222222;
+}
+
+.all-experience-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.2rem;
+}
+
+.all-experience-tags span {
+  border: 1px solid black;
+  padding: 0.3rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 640px) {
+  .all-experience-page {
+    padding: 3rem 1rem 4rem;
+  }
+
+  .all-experience-card {
+    padding: 1rem;
+  }
+
+  .all-experience-card-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

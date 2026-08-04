@@ -1,0 +1,134 @@
+.all-projects-page {
+  min-height: 100vh;
+  background-color: white;
+  color: black;
+  padding: 4rem 2rem 6rem;
+}
+
+.all-projects-hero {
+  max-width: 1120px;
+  margin: 0 auto 3rem;
+}
+
+.back-home-link {
+  display: inline-flex;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  gap: 0.35rem;
+}
+
+.back-home-link:hover span {
+  transform: translateX(-4px);
+}
+
+.all-projects-label {
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.82rem;
+  color: #4d4d4d;
+}
+
+.all-projects-title {
+  margin: 0 0 1rem;
+  font-size: clamp(2.3rem, 5vw, 3.4rem);
+  line-height: 1.05;
+}
+
+.all-projects-intro {
+  max-width: 700px;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #222222;
+}
+
+.all-projects-grid {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.all-project-card {
+  border: 1px solid black;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.all-project-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+.all-project-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 1.2rem;
+}
+
+.all-project-card-title {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.all-project-card-description {
+  margin: 0;
+  line-height: 1.6;
+  color: #222222;
+}
+
+.all-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.all-project-tags span {
+  border: 1px solid black;
+  padding: 0.3rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.all-project-link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.all-project-link:hover .arrow {
+  transform: translateX(5px);
+}
+
+@media (max-width: 900px) {
+  .all-projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .all-projects-page {
+    padding: 3rem 1rem 4rem;
+  }
+
+  .all-project-card-body {
+    padding: 1rem;
+  }
+}
