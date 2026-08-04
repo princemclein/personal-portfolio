@@ -3,6 +3,7 @@
   background-color: white;
   padding: 6rem 0;
   scroll-margin-top: 100px;
+  box-sizing: border-box;
 }
 
 .contact-container {
@@ -18,6 +19,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  min-width: 0;
 }
 
 .contact-label {
@@ -29,14 +31,14 @@
 }
 
 .contact-headline {
-  font-size: 3.75rem;
-  line-height: 1.02;
+  font-size: clamp(2rem, 2.4vw + 1.4rem, 3.75rem);
+  line-height: 1.1;
   font-weight: 700;
   margin: 0;
 }
 
 .contact-copy {
-  font-size: 1rem;
+  font-size: clamp(0.95rem, 0.4vw + 0.85rem, 1rem);
   line-height: 1.75;
   max-width: 540px;
   color: #333;
@@ -58,8 +60,15 @@
   color: #000;
   padding-bottom: 0.25rem;
   border-bottom: 1px solid #000;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 0.4vw + 0.8rem, 1rem);
   width: fit-content;
+  max-width: 100%;
+  gap: 1rem;
+}
+
+.contact-info-link span:first-child {
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .contact-info-link:hover .arrow {
@@ -69,6 +78,7 @@
 .contact-right {
   display: flex;
   justify-content: flex-end;
+  min-width: 0;
 }
 
 .contact-form {
@@ -99,6 +109,7 @@
   background: transparent;
   color: #000;
   resize: vertical;
+  box-sizing: border-box;
 }
 
 .form-group textarea {
@@ -131,4 +142,105 @@
 .arrow {
   transition: transform 0.2s ease;
   padding-left: 5px;
+  flex-shrink: 0;
+}
+
+/* Large desktop / ultra-wide */
+@media (min-width: 1600px) {
+  .contact-container {
+    width: min(1600px, 90%);
+  }
+}
+
+/* Small laptops / tablets in landscape */
+@media (max-width: 1024px) {
+  .contact-container {
+    gap: 3rem;
+  }
+}
+
+/* Tablets (portrait) — stack columns */
+@media (max-width: 900px) {
+  .contact-section {
+    padding: 5rem 0;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .contact-right {
+    justify-content: flex-start;
+  }
+
+  .contact-form {
+    max-width: none;
+  }
+
+  .contact-copy {
+    max-width: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 4rem 0;
+  }
+
+  .contact-container {
+    gap: 2.5rem;
+  }
+
+  .contact-left {
+    gap: 1.25rem;
+  }
+
+  .contact-info-list {
+    gap: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .contact-form {
+    gap: 1.25rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.85rem 1rem;
+  }
+
+  .form-group textarea {
+    min-height: 150px;
+  }
+
+  .contact-submit {
+    padding: 1rem;
+  }
+}
+
+/* Small phones (320px - 359px) */
+@media (max-width: 359px) {
+  .contact-headline {
+    font-size: 1.8rem;
+  }
+
+  .contact-copy {
+    font-size: 0.9rem;
+  }
+
+  .contact-info-link {
+    font-size: 0.85rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.9rem;
+    padding: 0.75rem 0.9rem;
+  }
+
+  .contact-submit {
+    font-size: 0.9rem;
+  }
 }

@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import "../css/Certification.css";
 
 const certifications = [
@@ -29,31 +28,6 @@ const certifications = [
 ];
 
 function Certification() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  const visibleCards = certifications.slice(activeIndex, activeIndex + 3);
-  if (visibleCards.length < 3) {
-    visibleCards.push(...certifications.slice(0, 3 - visibleCards.length));
-  }
-
-  const goToNext = () => {
-    setIsAnimating(true);
-    setActiveIndex((prev) => (prev + 1) % certifications.length);
-  };
-
-  const goToPrev = () => {
-    setIsAnimating(true);
-    setActiveIndex(
-      (prev) => (prev - 1 + certifications.length) % certifications.length,
-    );
-  };
-
-  useEffect(() => {
-    const timer = window.setTimeout(() => setIsAnimating(false), 240);
-    return () => window.clearTimeout(timer);
-  }, [activeIndex]);
-
   return (
     <section className="certification-section" id="certification">
       <div className="certification-container">
@@ -64,37 +38,18 @@ function Certification() {
             I've put in.
           </h2>
         </div>
-        <div className="certification-slider">
-          <button
-            className="slider-btn"
-            onClick={goToPrev}
-            aria-label="Previous certifications"
-          >
-            ←
-          </button>
 
-          <div
-            className={`certification-grid ${isAnimating ? "is-animating" : ""}`}
-          >
-            {visibleCards.map((cert) => (
-              <div className="cert-card" key={`${cert.title}-${cert.date}`}>
-                <h3>{cert.title}</h3>
-                <p className="issuer">{cert.issuer}</p>
-                <p className="date">{cert.date}</p>
-                <a href={cert.link} target="blank" className="cert-link">
-                  View Certificate<span className="arrow">→</span>
-                </a>
-              </div>
-            ))}
-          </div>
-
-          <button
-            className="slider-btn"
-            onClick={goToNext}
-            aria-label="Next certifications"
-          >
-            →
-          </button>
+        <div className="certification-grid">
+          {certifications.map((cert) => (
+            <div className="cert-card" key={`${cert.title}-${cert.date}`}>
+              <h3>{cert.title}</h3>
+              <p className="issuer">{cert.issuer}</p>
+              <p className="date">{cert.date}</p>
+              <a href={cert.link} target="blank" className="cert-link">
+                View Certificate<span className="arrow">→</span>
+              </a>
+            </div>
+          ))}
         </div>
       </div>
     </section>

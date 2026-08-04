@@ -5,6 +5,7 @@
   border-top: 1px solid #d9d9d9;
   padding: 5rem 0 2rem;
   font-family: "Inter", sans-serif;
+  box-sizing: border-box;
 }
 
 .footer-container {
@@ -18,19 +19,26 @@
   align-items: flex-end;
   gap: 3rem;
   padding-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.footer-heading-group {
+  min-width: 0;
+  flex: 1 1 400px;
 }
 
 .footer-headline {
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(1.8rem, 5vw, 4rem);
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.1;
   letter-spacing: -0.05em;
   max-width: 650px;
+  margin: 0;
 }
 
 .footer-message {
   margin-top: 1rem;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 0.5vw + 0.8rem, 1rem);
   line-height: 1.75;
   color: #444;
   max-width: 650px;
@@ -39,6 +47,7 @@
 .social-links {
   display: flex;
   gap: 1rem;
+  flex-shrink: 0;
 }
 
 .social-links a {
@@ -69,4 +78,88 @@
   color: #666;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+/* Large desktop / ultra-wide */
+@media (min-width: 1600px) {
+  .footer-container {
+    width: min(1600px, 90%);
+  }
+}
+
+/* Small laptops / tablets in landscape */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 4rem 0 2rem;
+  }
+
+  .footer-top {
+    gap: 2.5rem;
+  }
+}
+
+/* Tablets (portrait) — stack heading and social links */
+@media (max-width: 900px) {
+  .footer-top {
+    align-items: flex-start;
+    padding-bottom: 2.5rem;
+  }
+
+  .footer-headline,
+  .footer-message {
+    max-width: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .footer-heading-group {
+    flex: none;
+  }
+
+  .social-links {
+    align-self: flex-start;
+  }
+
+  .footer-bottom {
+    font-size: 0.72rem;
+    text-align: center;
+  }
+}
+
+/* Small phones (320px - 359px) */
+@media (max-width: 359px) {
+  .footer {
+    padding: 3rem 0 1.25rem;
+  }
+
+  .footer-headline {
+    font-size: 1.6rem;
+  }
+
+  .footer-message {
+    font-size: 0.85rem;
+  }
+
+  .social-links a {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  .social-links {
+    gap: 0.75rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+  }
 }
