@@ -3,6 +3,7 @@
   background-color: white;
   width: 100%;
   min-height: 100dvh;
+  box-sizing: border-box;
 }
 
 .tech-stack-content {
@@ -26,8 +27,8 @@
 }
 
 .tech-headline {
-  font-size: 50px;
-  line-height: 1;
+  font-size: clamp(1.7rem, 2vw + 1.2rem, 50px);
+  line-height: 1.1;
   margin: 0;
   font-weight: 700;
 }
@@ -66,6 +67,7 @@
   align-items: flex-start;
   text-align: left;
   position: relative;
+  width: 100%;
 }
 
 .tech-link-card {
@@ -103,4 +105,70 @@
   margin: 0;
   font-size: 0.95rem;
   color: #222;
+}
+
+/* Large desktop / ultra-wide */
+@media (min-width: 1600px) {
+  .tech-stack-content {
+    width: min(1400px, 90%);
+  }
+}
+
+/* Small laptops / tablets in landscape — drop to 2 columns */
+@media (max-width: 1024px) {
+  .tech-stack-section {
+    padding: 80px 0;
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem;
+  }
+}
+
+/* Tablets (portrait) */
+@media (max-width: 900px) {
+  .tech-stack-section {
+    min-height: auto;
+    padding: 5rem 0;
+  }
+
+  .tech-stack-header {
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* Mobile — single column */
+@media (max-width: 768px) {
+  .tech-stack-section {
+    padding: 4rem 0;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .tech-card {
+    padding-top: 14px;
+  }
+
+  .tech-link-card {
+    top: -1rem;
+  }
+}
+
+/* Small phones (320px - 359px) */
+@media (max-width: 359px) {
+  .tech-headline {
+    font-size: 1.5rem;
+  }
+
+  .tech-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .tech-card li {
+    font-size: 0.9rem;
+  }
 }

@@ -49,7 +49,7 @@ function Header() {
           {menuOpen ? "✕" : "☰"}
         </div>
 
-        <ul className={menuOpen ? "active" : ""}>
+        <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
           <li>
             <a
               href="#home"

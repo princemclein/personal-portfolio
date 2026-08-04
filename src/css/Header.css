@@ -17,7 +17,7 @@ nav {
   margin: 0 auto;
 }
 
-ul {
+.nav-links {
   display: flex;
   align-items: center;
   gap: 35px;
@@ -120,7 +120,7 @@ li a.active {
     z-index: 1002;
   }
 
-  ul {
+  .nav-links {
     position: fixed;
     top: 0;
     left: -75%;
@@ -138,21 +138,21 @@ li a.active {
     z-index: 1001;
   }
 
-  ul.active {
+  .nav-links.active {
     left: 0;
   }
 
-  ul li {
+  .nav-links li {
     width: 70%;
     text-align: center;
     border-bottom: 1px solid #222;
   }
 
-  ul li:last-child {
+  .nav-links li:last-child {
     border-bottom: none;
   }
 
-  ul li a,
+  .nav-links li a,
   .contact-btn {
     display: block;
     width: 100%;
