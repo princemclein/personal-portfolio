@@ -8,10 +8,7 @@ function About() {
         <div className="about-content">
           <p className="about-label">About</p>
           <h2 className="about-headline">
-            A creative <br />
-            developer driven by clarity, simplicity,
-            <br />
-            and purpose.
+            A creative developer driven by clarity, simplicity, and purpose.
           </h2>
         </div>
 
