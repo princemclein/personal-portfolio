@@ -21,7 +21,7 @@ function Hero() {
         <div className="hero-content">
           <h1 className="name">
             <span>
-              <span>PRINCE </span>
+              <span>PRINCESS </span>
             </span>
             <span>MCLEIN GONZALES</span>
           </h1>
