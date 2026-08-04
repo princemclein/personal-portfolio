@@ -9,9 +9,7 @@ function About() {
           <p className="about-label">About</p>
           <h2 className="about-headline">
             A creative <br />
-            developer driven
-            <br />
-            by clarity, simplicity,
+            developer driven by clarity, simplicity,
             <br />
             and purpose.
           </h2>
