@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 }
 
 /* Headline and label */
@@ -24,10 +25,11 @@
   margin: 0 0 1rem;
   color: rgb(55, 50, 50);
   letter-spacing: 2px;
+  font-size: 15px;
 }
 
 .projects-headline {
-  font-size: 55px;
+  font-size: clamp(1.8rem, 2.2vw + 1.2rem, 55px);
   margin: 0;
 }
 
@@ -124,4 +126,82 @@
 }
 .project-link:hover .arrow {
   transform: translateX(5px);
+}
+
+/* Large desktop / ultra-wide */
+@media (min-width: 1600px) {
+  .projects-content,
+  .projects-grid {
+    width: min(100%, 1500px);
+  }
+}
+
+/* Small laptops / tablets in landscape — drop to 3 columns */
+@media (max-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* Tablets (portrait) — drop to 2 columns */
+@media (max-width: 900px) {
+  .projects-section {
+    min-height: auto;
+    padding: 5rem 1.5rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    aspect-ratio: auto;
+  }
+}
+
+/* Mobile — single column */
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    aspect-ratio: auto;
+  }
+
+  .project-title,
+  .project-description {
+    min-height: 0;
+  }
+
+  .see-all-link {
+    margin-top: 1.5rem;
+  }
+}
+
+/* Small phones (320px - 359px) */
+@media (max-width: 359px) {
+  .projects-headline {
+    font-size: 1.6rem;
+  }
+
+  .project-title {
+    font-size: 18px;
+  }
+
+  .project-description {
+    font-size: 13px;
+  }
+
+  .project-tags span {
+    font-size: 9px;
+    padding: 3px 7px;
+  }
 }
