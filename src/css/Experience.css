@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   padding: 4rem 0;
+  box-sizing: border-box;
 }
 
 .experience-inner {
@@ -24,6 +25,7 @@
   flex-direction: column;
   gap: 2rem;
   padding-top: 0;
+  min-width: 0;
 }
 
 .experience-label {
@@ -35,9 +37,9 @@
 }
 
 .experience-headline {
-  font-size: 55px;
+  font-size: clamp(1.8rem, 2.2vw + 1.2rem, 55px);
   font-weight: 700;
-  line-height: 0.95;
+  line-height: 1.05;
   max-width: 520px;
   margin: 0;
 }
@@ -46,11 +48,12 @@
   width: 82px;
   height: 1.5px;
   background: #555;
+  display: block;
 }
 
 .experience-subline {
   max-width: 470px;
-  font-size: 1.15rem;
+  font-size: clamp(1rem, 0.5vw + 0.9rem, 1.15rem);
   line-height: 1.6;
   color: #555;
   margin: 0;
@@ -61,6 +64,7 @@
   flex-direction: column;
   gap: 1rem;
   margin-top: 29px;
+  min-width: 0;
 }
 
 .experience-card {
@@ -72,7 +76,6 @@
   gap: 0.75rem;
   width: 100%;
   min-height: 180px;
-  max-height: 200px;
   box-sizing: border-box;
 }
 
@@ -112,8 +115,90 @@
   text-decoration: none;
   font-weight: 450;
   margin-top: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.see-more-link .arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
 }
 
 .see-more-link:hover .arrow {
   transform: translateX(5px);
+}
+
+/* Large desktop / ultra-wide */
+@media (min-width: 1600px) {
+  .experience-inner {
+    max-width: 1600px;
+  }
+}
+
+/* Small laptops / tablets in landscape */
+@media (max-width: 1200px) {
+  .experience-inner {
+    gap: 3rem;
+    padding: 0 40px;
+  }
+
+  .experience-headline,
+  .experience-subline {
+    max-width: none;
+  }
+}
+
+/* Tablets (portrait) — stack columns */
+@media (max-width: 900px) {
+  .experience-section {
+    min-height: auto;
+    padding: 5rem 0;
+  }
+
+  .experience-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 0 30px;
+  }
+
+  .experience-list {
+    margin-top: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .experience-inner {
+    padding: 0 20px;
+  }
+
+  .experience-content {
+    gap: 1.5rem;
+  }
+
+  .experience-card {
+    min-height: 0;
+    padding: 1rem;
+  }
+}
+
+/* Small phones (320px - 359px) */
+@media (max-width: 359px) {
+  .experience-headline {
+    font-size: 1.6rem;
+  }
+
+  .experience-subline {
+    font-size: 0.95rem;
+  }
+
+  .experience-role {
+    font-size: 1rem;
+  }
+
+  .experience-org,
+  .experience-desc {
+    font-size: 0.9rem;
+  }
 }
