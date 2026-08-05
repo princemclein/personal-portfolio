@@ -3,7 +3,7 @@ import "../css/AllProjects.css";
 import project1 from "../assets/personal-portfoliov1.png";
 import project2 from "../assets/savor-street.png";
 import project3 from "../assets/acad-commission-portfolio.png";
-import project4 from "../assets/ssci-website.png";
+import project4 from "../assets/web-calculator.png";
 
 const projects = [
   {
@@ -33,10 +33,10 @@ const projects = [
   {
     title: "SSCI User Interface",
     description:
-      "A minimalist interface concept focused on clarity, structure, and modern presentation.",
-    tags: ["FIGMA"],
+      "A responsive calculator built with HTML, CSS, and JavaScript using DOM Manipulation and Event Handling",
+    tags: ["HTML5", "CSS3", "JAVASCRIPT"],
     image: project4,
-    link: "#",
+    link: "https://prince-web-calculator.vercel.app/",
   },
 ];
 

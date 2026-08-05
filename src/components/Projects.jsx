@@ -2,7 +2,7 @@ import "../css/Projects.css";
 import project1 from "../assets/personal-portfoliov1.png";
 import project2 from "../assets/savor-street.png";
 import project3 from "../assets/acad-commission-portfolio.png";
-import project4 from "../assets/ssci-website.png";
+import project4 from "../assets/web-calculator.png";
 import { Link } from "react-router-dom";
 
 function Projects() {
@@ -31,7 +31,7 @@ function Projects() {
           </p>
           <div className="project-tags">
             <span>HTML5</span>
-            <span>CSS</span>
+            <span>CSS3</span>
             <span>JAVASCRIPT</span>
           </div>
           <a
@@ -57,7 +57,7 @@ function Projects() {
           </p>
           <div className="project-tags">
             <span>HTML5</span>
-            <span>CSS</span>
+            <span>CSS3</span>
             <span>JAVASCRIPT</span>
           </div>
           <a
@@ -82,7 +82,7 @@ function Projects() {
           </p>
           <div className="project-tags">
             <span>HTML5</span>
-            <span>CSS</span>
+            <span>CSS3</span>
             <span>JAVASCRIPT</span>
           </div>
           <a
@@ -95,16 +95,22 @@ function Projects() {
 
         {/* Card 4: SSCI Website */}
         <div className="project-card">
-          <img src={project4} alt="SSCI Website" className="project-img" />
-          <p className="project-title">SSCI User-Interface</p>
+          <img src={project4} alt="Web-Calculator" className="project-img" />
+          <p className="project-title">Web-Calculator</p>
           <p className="project-description">
-            A responsive organization website UI built to showcase SSCI's
-            mission, activities, and student initiatives.
+            A responsive calculator built with HTML, CSS, and JavaScript using
+            DOM manipulation and event handling.
           </p>
           <div className="project-tags">
-            <span>Figma</span>
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JAVASCRIPT</span>
           </div>
-          <a href="#" className="project-link">
+          <a
+            href="https://prince-web-calculator.vercel.app/"
+            target="blank"
+            className="project-link"
+          >
             View My Project <span className="arrow">→</span>
           </a>
         </div>
